@@ -1,5 +1,6 @@
 <?php
-session_start();
+//session_start();
+include('security.php');
 include('includes/header.php');
 include('includes/navbar.php');
 ?>
@@ -64,13 +65,13 @@ include('includes/navbar.php');
  if(isset($_SESSION['success']) && $_SESSION['success'] !='')
  {
     //echo $_SESSION['success'];
-    echo '<h2>' .$_SESSION['success'].'</h2>';
+    echo '<h2 class="bg-primary text-white">' .$_SESSION['success'].'</h2>';
     unset($_SESSION['success']);
  }
  if(isset($_SESSION['status']) && $_SESSION['status'] !='')
  {
     //echo $_SESSION['success'];
-    echo '<h2 class="bg-info">' .$_SESSION['status'].'</h2>';
+    echo '<h2 class="bg-danger" text-white>' .$_SESSION['status'].'</h2>';
     unset($_SESSION['status']);
  }
 ?>
@@ -112,9 +113,13 @@ include('includes/navbar.php');
                     <form action="register_edit.php" method="post">
                     <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
                     <button type="submit" name="edit_btn" class="btn btn-success"> EDIT</button>
+                    </form>
                 </td>
                 <td>
-                    <button type="submit" class="btn btn-danger"> DELETE</button>
+                  <form action="code.php" method="post">
+                    <input type="hidden" name="delete_id" value="<?php echo $row['id'] ?>">
+                    <button type="submit" name="delete_btn" class="btn btn-danger"> DELETE</button>
+                  </form>
                 </td>
             </tr>
             <?php
