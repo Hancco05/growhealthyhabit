@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    git branch: 'main', credentialsId: 'your-github-credentials', url: 'https://github.com/Hancco05/growhealthyhabit.git'
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'composer install' // Puedes ejecutar comandos PHP y Composer aquí
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'phpunit' // Ejecuta tus pruebas PHPUnit
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Agrega comandos para implementar tu aplicación PHP si es necesario
+            }
+        }
+    }
+}
