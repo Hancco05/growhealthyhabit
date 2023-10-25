@@ -8,46 +8,78 @@ include('includes/navbar.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información de la Persona</title>
+    
+
+    <title><h1>Información de la Persona</h1></title>
 </head>
 <body>
-    <h1>Información de la Persona</h1>
-
+<div class="table-responsive">
+        
     <?php
-    // Mostrar la información desde la base de datos (reemplaza con tu configuración)
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "adminpanel";
+    $connection = mysqli_connect("localhost", "root", "", "adminpanel");
 
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
-
-    $sql = "SELECT * FROM personas";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        echo "<table border='1'>";
-        echo "<tr><th>Nombre</th><th>Apellido</th><th>Edad</th><th>Sexo</th><th>Peso</th><th>Estatura</th><th>Descripción</th><th>Fotografía</th></tr>";
-
-        while($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>".$row["nombre"]."</td><td>".$row["apellido"]."</td><td>".$row["edad"]."</td><td>".$row["sexo"]."</td><td>".$row["peso"]."</td><td>".$row["estatura"]."</td><td>".$row["descripcion"]."</td>";
-            echo "<td><img src='fotografias/".$row["fotografia"]."' width='100' height='100'></td>";
-            echo "</tr>";
-        }
-        echo "</table>";
-    } else {
-        echo "No hay información para mostrar.";
-    }
-
-    $conn->close();
+       $query = "SELECT * FROM personas";
+       $query_run = mysqli_query($connection,$query);
     ?>
+    <h1></h1>
+    <h1>ㅤ</h1>
+    <h2>ㅤDescripcion personal fisica</h2>
+    <h1>ㅤ</h1>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+               <th>ID</th>
+               <th>Nombre</th>
+               <th>Apellido</th>
+               <th>Edad</th>
+               <th>Sexo</th>
+               <th>Peso</th>
+               <th>Estatura</th>
+               <th>Descripcion</th>
+               <th>Fotografia</th>  
+            </tr>
+        </thead>
+         <tbody>
+            <?php
+            if(mysqli_num_rows($query_run) > 0)
+            {
+                while($row = mysqli_fetch_assoc($query_run))
+                {
+                    ?>
+                    
+            <tr>
+                <td><?php echo $row['id']; ?></td>
+                <td><?php echo $row['nombre']; ?></td>
+                <td><?php echo $row['apellido']; ?></td>
+                <td><?php echo $row['edad']; ?></td>
+                <td><?php echo $row['sexo']; ?></td>
+                <td><?php echo $row['peso']; ?></td>
+                <td><?php echo $row['estatura']; ?></td>
+                <td><?php echo $row['descripcion']; ?></td>
+                <td><?php echo $row['fotografia']; ?></td>
+                <td>
+                    
+                </td>
+                
+            </tr>
+            <?php
+                }
+            }
+            else {
+                echo "No Record Found";
+            }
+            ?>
+
+         </tbody>
+        </table>
+    </div>
+
+  
+
 </body>
 </html>
+
+
 <?php
     include('includes/scripts.php');
     include('includes/footer.php');

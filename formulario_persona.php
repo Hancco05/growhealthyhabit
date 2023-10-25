@@ -11,39 +11,55 @@ include('includes/navbar.php');
     <title>Formulario de Persona</title>
 </head>
 <body>
-    <h1>Formulario de Persona</h1>
+<div class="container">
 
-    <form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required><br>
         
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" required><br>
-        
-        <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="edad" required><br>
-
+<div class="text-center">
+<h1>ㅤ</h1>
+    <h1 class="h4 text-gray-900 mb-4">Formulario persona</h1>
+</div>
+<form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <input type="text" class="form-control form-control-user" id="nombre" name="nombre"
+            placeholder="Nombre">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control form-control-user" id="apellido" name="apellido"
+            placeholder="Apellido">
+    </div>
+    <div class="form-group">
+        <input type="number" class="form-control form-control-user" id="edad" name="edad"
+            placeholder="Edad">
+    </div>
+    <div class="form-group">
         <label for="sexo">Sexo:</label>
-        <select id="sexo" name="sexo" required>
-            <option value="Hombre">Hombre</option>
-            <option value="Mujer">Mujer</option>
-            <option value="No Binario">No Binario</option>
-        </select><br>
+            <select id="sexo" name="sexo" required>
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer">Mujer</option>
+                    <option value="No Binario">No Binario</option>
+            </select><br>
+    </div>
+    <div class="form-group">
+        <input type="number" class="form-control form-control-user" id="peso" name="peso" step="0.01"
+            placeholder="Peso (KG)" required>
+    </div>
+    <div class="form-group">
+        <input type="number" class="form-control form-control-user" id="estatura" name="estatura" step="0.01"
+            placeholder="Estatura (m)" required>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control form-control-user" id="descripcion" name="descripcion"
+            placeholder="descripcion" required></textarea>
+    </div>
+    
+    <label for="fotografia">Adjuntar Fotografía:</label>
+    <input type="file" id="fotografia" name="fotografia"><br>
+    
+    <button type="submit" class="upload-button">Enviar</button>
+</form>   
+</div>
 
-        <label for="peso">Peso (kg):</label>
-        <input type="number" id="peso" name="peso" step="0.01" required><br>
-
-        <label for="estatura">Estatura (m):</label>
-        <input type="number" id="estatura" name="estatura" step="0.01" required><br>
-
-        <label for="descripcion">Descripción:</label>
-        <textarea id="descripcion" name="descripcion" required></textarea><br>
-
-        <label for="fotografia">Adjuntar Fotografía:</label>
-        <input type="file" id="fotografia" name="fotografia"><br>
-
-        <input type="submit" name="submit" value="Enviar">
-    </form>
+</div>
 </body>
 </html>
 <?php

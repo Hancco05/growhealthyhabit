@@ -8,12 +8,15 @@ include('includes/navbar.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Ver Contenido</title>
 </head>
 <body>
-    <h1>Contenidos</h1>
-
-    <?php
+   <div class="header-title">
+    <h6>ㅤ</h6>
+   <h1>ㅤㅤㅤㅤㅤㅤㅤㅤㅤContenidosㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h1>
+       <div class="body-video">
+       <?php
     $videos_por_pagina = 9; // Número de videos por página
     $pagina_actual = isset($_GET['pagina']) ? $_GET['pagina'] : 1;
     $inicio = ($pagina_actual - 1) * $videos_por_pagina;
@@ -28,26 +31,32 @@ include('includes/navbar.php');
     $sql = "SELECT * FROM contenido LIMIT $inicio, $videos_por_pagina";
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            echo "<div style='float: left; margin: 10px;'>";
-            echo "<video width='320' height='240' controls>";
-            echo "<source src='".$row["video"]."' type='video/mp4'>";
-            echo "Tu navegador no soporta el elemento <code>video</code>.";
-            echo "</video>";
-            echo "<p>Tipo de Contenido: ".$row["tipo_contenido"]."</p>";
-            echo "<p>".$row["descripcion"]."</p>";
-            echo "<a href='".$row["video"]."' download>Descargar</a>";
-            echo "</div>";
-        }
-    } else {
-        echo "No hay contenido para mostrar.";
+    
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo "<div class='video-container'>";
+        echo "<video width='320' height='240' controls>";
+        echo "<source src='".$row["video"]."' type='video/mp4'>";
+        echo "Tu navegador no soporta el elemento <code>video</code>.";
+        echo "</video>";
+        echo "<p class='content-type'>Tipo de Contenido: ".$row["tipo_contenido"]."</p>";
+        echo "<p class='description'>".$row["descripcion"]."</p>";
+        echo "<a href='".$row["video"]."' download class='download-button'>Descargar</a>";
+        echo "</div>";
     }
+} else {
+    echo "No hay contenido para mostrar.";
+}
+
+
 
     $conn->close();
     ?>
-
-    <?php
+            <div class="footer-volver">
+            <br>
+             <a href="contenido.php">Volver</a>
+                    <div>
+                    <?php
     // Paginación
     $conn = new mysqli("localhost", "root", "", "adminpanel");
 
@@ -69,9 +78,12 @@ include('includes/navbar.php');
 
     $conn->close();
     ?>
+                    </div>
 
-    <br>
-    <a href="contenido.php">Volver</a>
+            </div>
+       </div>
+   </div>
+    
 </body>
 </html>
 
@@ -79,3 +91,5 @@ include('includes/navbar.php');
     include('includes/scripts.php');
     include('includes/footer.php');
 ?>
+
+

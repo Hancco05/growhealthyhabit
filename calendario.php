@@ -1,9 +1,11 @@
-<?php
-
+<?php 
+//include('security.php');
+session_start();
 
 include('includes/header.php'); 
 include('includes/navbar.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,15 +14,18 @@ include('includes/navbar.php');
     <title>Calendario de Tareas</title>
 </head>
 <body>
-    <h1>Calendario de Tareas</h1>
+    
+    <div>
+       <h1>Calendario de Tareas</h1>
+        <div>
+           <form action="calendario.php" method="get">
+           <label for="mes">Seleccionar Mes:</label>
+           <input type="month" id="mes" name="mes" required>
+           <button type="submit">Filtrar</button>
+        </form>
 
-    <form action="calendario.php" method="get">
-        <label for="mes">Seleccionar Mes:</label>
-        <input type="month" id="mes" name="mes" required>
-        <button type="submit">Filtrar</button>
-    </form>
-
-    <?php
+            <div>
+            <?php
     if (isset($_GET['mes'])) {
         $mes = date("m", strtotime($_GET['mes']));
         $anio = date("Y", strtotime($_GET['mes']));
@@ -30,7 +35,7 @@ include('includes/navbar.php');
     }
 
     // Conectar a la base de datos y recuperar tareas del mes seleccionado
-    $conn = new mysqli("localhost", "root", "", "test1");
+    $conn = new mysqli("localhost", "root", "", "adminpanel");
 
     if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
@@ -58,10 +63,10 @@ include('includes/navbar.php');
 
     $conn->close();
     ?>
-
-    <h2>Resumen de Urgencias</h2>
-
-    <?php
+                  <div>
+                     <h2>Resumen de Urgencias</h2>
+                       <div>
+                       <?php
     // Conectar nuevamente a la base de datos y contar tareas por urgencia
     $conn = new mysqli("localhost", "root", "", "adminpanel");
 
@@ -81,20 +86,79 @@ include('includes/navbar.php');
     $total_media = $result_media->fetch_assoc()['total'];
     $total_baja = $result_baja->fetch_assoc()['total'];
 
-    echo "Urgencia Alta: $total_alta tareas<br>";
-    echo "<h1></h1>";
-    echo "Urgencia Media: $total_media tareas<br>";
-    echo "<h1></h1>";
-    echo "Urgencia Baja: $total_baja tareas<br>";
+    
 
     $conn->close();
-    ?>
+    ?>                         <div>
+                                    
+                                    <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-4 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "Urgencia Alta: $total_alta tareas<br>"; ?></div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Annual) Card Example -->
+                        <div class="col-xl-3 col-md-4 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "Urgencia Media: $total_media tareas<br>"; ?></div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tasks Card Example -->
+                        <div class="col-xl-3 col-md-4 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?php echo "Urgencia Baja: $total_baja tareas<br>"; ?></div>
+                                                </div>
+                                                <div class="col">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                               </div>
+
+                       </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
 
 <?php
     include('includes/scripts.php');
     include('includes/footer.php');
-    ?>
-
+?>
 

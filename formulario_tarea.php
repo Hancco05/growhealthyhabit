@@ -12,26 +12,41 @@ include('includes/navbar.php');
     <title>Crear Tarea</title>
 </head>
 <body>
-    <h1>Crear Nueva Tarea</h1>
-    <form action="agregar_tarea.php" method="post">
-        <label for="tarea_principal">Tarea Principal:</label>
-        <input type="text" id="tarea_principal" name="tarea_principal" required><br>
+<div class="container">
+
         
-        <label for="descripcion">Descripción:</label><br>
-        <textarea id="descripcion" name="descripcion" rows="4" cols="50"></textarea><br>
-        
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha" required><br>
-        
-        <label for="urgencia">Urgencia:</label>
-        <select id="urgencia" name="urgencia" required>
-            <option value="alta">Alta</option>
-            <option value="media">Media</option>
-            <option value="baja">Baja</option>
-        </select><br>
-        
-        <input type="submit" value="Agregar Tarea">
-    </form>
+<div class="text-center">
+<h1>ㅤ</h1>
+    <h1 class="h4 text-gray-900 mb-4">Crear Nueva Tarea</h1>
+</div>
+<form action="agregar_tarea.php" method="post">
+    <div class="form-group">
+        <input type="text" class="form-control form-control-user" id="tarea_principal" name="tarea_principal"
+            placeholder="Parea principal">
+    </div>
+    
+    <div class="form-group">
+        <textarea class="form-control form-control-user" id="descripcion" name="descripcion"
+            placeholder="descripcion" required></textarea>
+    </div>
+    
+    <div class="form-group">
+        <input type="date" class="form-control form-control-user" id="fecha" name="fecha"
+            placeholder="Fecha">
+    </div>
+    
+    <label for="urgencia">Urgencia:</label>
+    <select id="urgencia" name="urgencia" required>
+          <option value="alta">Alta</option>
+          <option value="media">Media</option>
+          <option value="baja">Baja</option>
+    </select><br>
+    
+    <button type="submit" class="upload-button">Agregar tarea</button>
+</form>   
+</div>
+
+</div>	
 </body>
 </html>
 <?php

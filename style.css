@@ -1,0 +1,305 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.upload-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    background-color: #8BC34A;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.view-button {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+    background-color: #0056b3;
+}
+
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.calendario-container {
+    text-align: center;
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.tareas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tarea {
+    width: 250px;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.urgencias {
+    display: flex;
+    justify-content: space-around;
+}
+
+.urgencia {
+    width: 250px;
+    height: 50px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.alta {
+    background-color: #FF5733; /* Rojo */
+    color: white;
+}
+
+.media {
+    background-color: #FFC107; /* Amarillo */
+}
+
+.baja {
+    background-color: #4CAF50; /* Verde */
+}
+
+/* styles.css */
+
+.video-container {
+    float:left;
+    margin: 15px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding-right: 60px;
+}
+
+.video-container video {
+    width: 110%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.content-type {
+    font-weight: bold;
+}
+
+.download-button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.upload-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    background-color: #8BC34A;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.view-button {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.calendario-titulo {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.filtro-mes {
+    margin-top: 10px;
+}
+
+.tareas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.tarea {
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.alta {
+    background-color: #FF5733; /* Rojo */
+}
+
+.media {
+    background-color: #FFC107; /* Amarillo */
+}
+
+.baja {
+    background-color: #4CAF50; /* Verde */
+}
+
+.urgencias {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.urgencia {
+    width: 150px;
+    height: 50px;
+    margin: 10px;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.urgencia.alta {
+    background-color: #FF5733; /* Rojo */
+}
+
+.urgencia.media {
+    background-color: #FFC107; /* Amarillo */
+}
+
+.urgencia.baja {
+    background-color: #4CAF50; /* Verde */
+}
+
+
+

@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Body = "<p><strong>Nombre:</strong> $nombre</p><p><strong>Descripción:</strong> $descripcion</p>";
 
         $mail->send();
+        
         echo 'Correo enviado correctamente.';
     } catch (Exception $e) {
         echo "Error al enviar el correo: {$mail->ErrorInfo}";

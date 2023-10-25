@@ -97,7 +97,7 @@ if(isset($_POST['login_btn']))
     if(mysqli_fetch_array($query_run))
     {
         $_SESSION['username'] = $email_login;
-        header('Location: index.php');
+        header('Location: main.php');
     }
     else
     {

@@ -3,9 +3,9 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="main.php">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    
                 </div>
                 <div class="sidebar-brand-text mx-3">GHH</div>
             </a>
@@ -15,8 +15,8 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <a class="nav-link" href="main.php">
+                <i class="fas fa-running"></i>
                     <span>Dashboard</span></a>
             </li>
 
@@ -36,19 +36,19 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="register.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-user-tag"></i>
                     <span>Admin Profile</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="contenido.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-file-video"></i>
                     <span>Contenido</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="formulario_persona.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-user-alt"></i>
                     <span>Perfil</span></a>
             </li>
 
@@ -60,25 +60,25 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="formulario_tarea.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-briefcase"></i>
                     <span>Tareas</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="calendario.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-dumbbell"></i>
                     <span>Ver Tareas</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="cronometro.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-stopwatch"></i>
                     <span>Cronometro</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="soporte.php">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-question"></i>
                     <span>Soporte</span></a>
             </li>
 
